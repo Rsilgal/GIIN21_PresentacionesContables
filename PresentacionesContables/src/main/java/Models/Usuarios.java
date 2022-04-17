@@ -4,6 +4,7 @@
  */
 package Models;
 
+import Models.Tipos.TipoUsuario;
 import javax.persistence.*;
 
 /**
@@ -57,6 +58,7 @@ public class Usuarios {
     }
     
     @Id                     // Se trata de la clave primaria.
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="Id")      // Indicamos la columna a la que está enlazado.
     private int Id;
     
@@ -66,7 +68,7 @@ public class Usuarios {
     @Column(name="Clave")
     private String Clave;
     
-    @OneToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="Id")
     private TipoUsuario TipoUsuario;
     

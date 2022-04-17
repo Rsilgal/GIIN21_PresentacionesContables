@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Models;
+package Models.Tipos;
 
 import javax.persistence.*;
 
@@ -11,16 +11,15 @@ import javax.persistence.*;
  * @author rsilvente
  */
 @Entity
-@Table(name="tipo_usuario")
-public class TipoUsuario {
+@Table(name="documentacion")
+public class TipoDocumentacion {
 
-    public TipoUsuario(int Id, String Nombre, String Descripcion) {
-        this.Id = Id;
+    public TipoDocumentacion(String Nombre, String Descripcion) {
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
     }
     
-    public TipoUsuario() {
+    public TipoDocumentacion() {
     }
 
     public int getId() {
@@ -42,7 +41,11 @@ public class TipoUsuario {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
-    
+
+    @Override
+    public String toString() {
+        return "TipoDocumentacion{" + "Id=" + Id + ", Nombre=" + Nombre + ", Descripcion=" + Descripcion + '}';
+    }
     
     
     @Id
@@ -55,6 +58,4 @@ public class TipoUsuario {
     
     @Column(name="Descripcion")
     private String Descripcion;
-    
-    
 }

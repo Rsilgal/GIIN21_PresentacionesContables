@@ -4,6 +4,7 @@
  */
 package Models;
 
+import Models.Tipos.TipoMunicipio;
 import javax.persistence.*;
 
 /**
@@ -14,9 +15,10 @@ import javax.persistence.*;
 @Table(name="municipios")
 public class Municipios {
 
-    public Municipios(String Nombre, TipoMunicipio TipoMunicipio) {
+    public Municipios(String Nombre, TipoMunicipio TipoMunicipio, Usuarios Usuario) {
         this.Nombre = Nombre;
         this.TipoMunicipio = TipoMunicipio;
+        this.Usuario = Usuario;
     }
 
     public Municipios() {
@@ -41,8 +43,19 @@ public class Municipios {
     public void setTipoMunicipio(TipoMunicipio TipoMunicipio) {
         this.TipoMunicipio = TipoMunicipio;
     }
-    
-    
+
+    public Usuarios getUsuario() {
+        return Usuario;
+    }
+
+    public void setUsuario(Usuarios Usuario) {
+        this.Usuario = Usuario;
+    }
+
+    @Override
+    public String toString() {
+        return "Municipios{" + "Id=" + Id + ", Nombre=" + Nombre + ", TipoMunicipio=" + TipoMunicipio + ", Usuario=" + Usuario + '}';
+    }
     
     
     @Id
@@ -53,9 +66,11 @@ public class Municipios {
     @Column(name="Nombre")
     private String Nombre;
     
-    @OneToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="Id")
     private TipoMunicipio TipoMunicipio;
     
-    
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="Id")
+    private Usuarios Usuario;
 }
