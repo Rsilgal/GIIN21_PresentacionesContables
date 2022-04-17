@@ -12,6 +12,6 @@ package com.mycompany.presentacionescontables;
 public class PresentacionesContables {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
     }
 }
