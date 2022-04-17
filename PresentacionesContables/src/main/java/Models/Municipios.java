@@ -11,16 +11,15 @@ import javax.persistence.*;
  * @author rsilvente
  */
 @Entity
-@Table(name="tipo_usuario")
-public class TipoUsuario {
+@Table(name="municipios")
+public class Municipios {
 
-    public TipoUsuario(int Id, String Nombre, String Descripcion) {
-        this.Id = Id;
+    public Municipios(String Nombre, TipoMunicipio TipoMunicipio) {
         this.Nombre = Nombre;
-        this.Descripcion = Descripcion;
+        this.TipoMunicipio = TipoMunicipio;
     }
-    
-    public TipoUsuario() {
+
+    public Municipios() {
     }
 
     public int getId() {
@@ -35,13 +34,14 @@ public class TipoUsuario {
         this.Nombre = Nombre;
     }
 
-    public String getDescripcion() {
-        return Descripcion;
+    public TipoMunicipio getTipoMunicipio() {
+        return TipoMunicipio;
     }
 
-    public void setDescripcion(String Descripcion) {
-        this.Descripcion = Descripcion;
+    public void setTipoMunicipio(TipoMunicipio TipoMunicipio) {
+        this.TipoMunicipio = TipoMunicipio;
     }
+    
     
     
     
@@ -53,8 +53,9 @@ public class TipoUsuario {
     @Column(name="Nombre")
     private String Nombre;
     
-    @Column(name="Descripcion")
-    private String Descripcion;
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="Id")
+    private TipoMunicipio TipoMunicipio;
     
     
 }
