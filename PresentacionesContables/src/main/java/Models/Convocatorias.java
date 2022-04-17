@@ -95,6 +95,7 @@ public class Convocatorias {
     @Column(name="Estado_Apertura")
     private boolean EstadoApertura;
     
-    @Column(name="Tipo_Documentacion")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="Id")
     private TipoDocumentacion Documentacion;
 }
