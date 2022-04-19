@@ -17,7 +17,7 @@ import org.hibernate.metamodel.MetadataSources;
  *
  * @author rsilvente
  */
-public class ConecctionController {
+public class ConnectionController {
     
     private static final SessionFactory sessionFactory = buildSessionFactory();
 

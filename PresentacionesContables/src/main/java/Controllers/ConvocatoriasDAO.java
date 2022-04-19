@@ -4,29 +4,29 @@
  */
 package Controllers;
 
+import Models.Convocatorias;
 import Interfaces.ICRUD;
-import Models.Usuarios;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
-import org.hibernate.Transaction;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
  * @author rsilvente
  */
-public class UsuariosDAO implements ICRUD<Usuarios> {
+public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
 
     @Override
-    public void addElemet(Usuarios element) {
+    public void addElemet(Convocatorias element) {
         Transaction trns = null;
         Session session = ConnectionController.getSessionFactory().openSession();
-        try{
+        try {
             trns = session.beginTransaction();
             session.save(element);
             session.getTransaction().commit();
-        }catch(RuntimeException e) {
+        } catch (RuntimeException e) {
             if (trns != null) {
                 trns.rollback();
             }
@@ -38,19 +38,20 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
     }
 
     @Override
-    public void updateElement(Usuarios element) {
+    public void updateElement(Convocatorias element) {
         Transaction trns = null;
         Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
+
+        try {
+            trns = session.getTransaction();
             session.update(element);
             session.getTransaction().commit();
-        }catch(RuntimeException e){
+        } catch (RuntimeException e) {
             if (trns != null) {
                 trns.rollback();
             }
-            e.printStackTrace();            
-        }finally{
+            e.printStackTrace();
+        } finally {
             session.flush();
             session.close();
         }
@@ -60,59 +61,60 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
     public void deleteElement(int id) {
         Transaction trns = null;
         Session session = ConnectionController.getSessionFactory().openSession();
+        
         try{
-            trns = session.beginTransaction();
-            Usuarios usuario = (Usuarios) session.load(Usuarios.class, id);
-            session.delete(usuario);
+            trns = session.getTransaction();
+            Convocatorias convocatoria = (Convocatorias) session.load(Convocatorias.class, id);
+            session.delete(convocatoria);
             session.getTransaction().commit();
-        }catch(RuntimeException e){
-            if (trns != null){
+        } catch(RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             e.printStackTrace();
-        }finally{
+        } finally {
             session.flush();
             session.close();
         }
     }
-    
 
     @Override
-    public List<Usuarios> getAllElements() {
-        List<Usuarios> usuarios = new ArrayList<Usuarios>();
+    public List<Convocatorias> getAllElements() {
+        List<Convocatorias> convocatorias = new ArrayList<Convocatorias>();
         Transaction trns = null;
         Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            usuarios = session.createQuery("from Usuarios").list();
-        }catch(RuntimeException e){
+        
+        try {
+            trns = session.getTransaction();
+            convocatorias = session.createQuery("from Convocatorias").list();
+        } catch(RuntimeException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             session.flush();
             session.close();
         }
-        return usuarios;
+        return convocatorias;
     }
 
     @Override
-    public Usuarios getElementById(int id) {
-        Usuarios usuario = null;
+    public Convocatorias getElementById(int id) {
+        Convocatorias convocatoria = null;
         Transaction trns = null;
         Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            String queryString = "from Usuarios where id = :Id";
+        
+        try {
+            trns = session.getTransaction();
+            String queryString = "from Municipios where id = :Id";
             Query query = session.createQuery(queryString);
             query.setInteger("Id", id);
-            usuario = (Usuarios) query.uniqueResult();
-        }catch(RuntimeException e){
+            convocatoria = (Convocatorias) query.uniqueResult();
+        }catch(RuntimeException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             session.flush();
             session.close();
         }
-        return usuario;
+        return convocatoria;
     }
-
 
 }

@@ -14,7 +14,7 @@ public interface ICRUD<T> {
     
     public void addElemet(T element);
     public void updateElement(T element);
-    public void deleteElement(T element);
+    public void deleteElement(int id);
     public List<T> getAllElements();
     public T getElementById(int id);
 }
