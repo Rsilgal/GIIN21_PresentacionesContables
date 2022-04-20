@@ -262,17 +262,17 @@ public class CuentadanteView extends javax.swing.JFrame {
 
     private void initBotonesMunicipio() {
         this.botonesMunicipio = new JButton[0];
-        this.botonesMunicipio[3] = this.jButton8;
+        this.botonesMunicipio[0] = this.jButton8;
     }
     
     private void initBotonesConvocatoria() {
         this.botonesConvocatoria = new JButton[0];
-        this.botonesConvocatoria[4] = this.jButton17;
+        this.botonesConvocatoria[0] = this.jButton17;
     }
     
     private void initBotonesPresentacion() {
         this.botonesPresentacion = new JButton[1];
         this.botonesPresentacion[0] = this.jButton9;
-        this.botonesPresentacion[2] = this.jButton15;
+        this.botonesPresentacion[1] = this.jButton15;
     }
 }

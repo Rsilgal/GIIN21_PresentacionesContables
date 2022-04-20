@@ -15,14 +15,12 @@ public class FiscalView extends javax.swing.JFrame {
     /**
      * Creates new form AdministradorView
      */
-    public JButton[] botonesUsuario;
     public JButton[] botonesMunicipio;
     public JButton[] botonesConvocatoria;
     public JButton[] botonesPresentacion;
 
     public FiscalView() {
         initComponents();
-        initBotonesUsuario();
         initBotonesMunicipio();
         initBotonesConvocatoria();
         initBotonesPresentacion();
@@ -256,35 +254,20 @@ public class FiscalView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 
-    private void initBotonesUsuario() {
-        this.botonesUsuario = new JButton[3];
-        this.botonesUsuario[0] = this.jButton1;
-        this.botonesUsuario[1] = this.jButton2;
-        this.botonesUsuario[2] = this.jButton3;
-        this.botonesUsuario[3] = this.jButton4;
-    }
+
 
     private void initBotonesMunicipio() {
-        this.botonesMunicipio = new JButton[3];
-        this.botonesMunicipio[0] = this.jButton5;
-        this.botonesMunicipio[1] = this.jButton6;
-        this.botonesMunicipio[2] = this.jButton7;
-        this.botonesMunicipio[3] = this.jButton8;
+        this.botonesMunicipio = new JButton[0];
+        this.botonesMunicipio[0] = this.jButton8;
     }
     
     private void initBotonesConvocatoria() {
-        this.botonesConvocatoria = new JButton[3];
-        this.botonesConvocatoria[0] = this.jButton10;
-        this.botonesConvocatoria[2] = this.jButton11;
-        this.botonesConvocatoria[3] = this.jButton12;
-        this.botonesConvocatoria[4] = this.jButton17;
+        this.botonesConvocatoria = new JButton[0];
+        this.botonesConvocatoria[0] = this.jButton17;
     }
     
     private void initBotonesPresentacion() {
-        this.botonesPresentacion = new JButton[3];
-        this.botonesPresentacion[0] = this.jButton9;
-        this.botonesPresentacion[1] = this.jButton14;
-        this.botonesPresentacion[2] = this.jButton15;
-        this.botonesPresentacion[3] = this.jButton16;
+        this.botonesPresentacion = new JButton[0];
+        this.botonesPresentacion[0] = this.jButton16;
     }
 }

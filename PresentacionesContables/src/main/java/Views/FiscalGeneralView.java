@@ -15,7 +15,6 @@ public class FiscalGeneralView extends javax.swing.JFrame {
     /**
      * Creates new form AdministradorView
      */
-    public JButton[] botonesUsuario;
     public JButton[] botonesMunicipio;
     public JButton[] botonesConvocatoria;
     public JButton[] botonesPresentacion;
@@ -285,14 +284,14 @@ public class FiscalGeneralView extends javax.swing.JFrame {
     private void initBotonesConvocatoria() {
         this.botonesConvocatoria = new JButton[3];
         this.botonesConvocatoria[0] = this.jButton10;
-        this.botonesConvocatoria[2] = this.jButton11;
-        this.botonesConvocatoria[3] = this.jButton12;
-        this.botonesConvocatoria[4] = this.jButton17;
+        this.botonesConvocatoria[1] = this.jButton11;
+        this.botonesConvocatoria[2] = this.jButton12;
+        this.botonesConvocatoria[3] = this.jButton17;
     }
     
     private void initBotonesPresentacion() {
         this.botonesPresentacion = new JButton[1];
-        this.botonesPresentacion[2] = this.jButton15;
-        this.botonesPresentacion[3] = this.jButton16;
+        this.botonesPresentacion[0] = this.jButton15;
+        this.botonesPresentacion[1] = this.jButton16;
     }
 }
