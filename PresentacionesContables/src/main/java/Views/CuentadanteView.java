@@ -10,19 +10,17 @@ import javax.swing.JButton;
  *
  * @author rsilvente
  */
-public class AdministradorView extends javax.swing.JFrame {
+public class CuentadanteView extends javax.swing.JFrame {
 
     /**
      * Creates new form AdministradorView
      */
-    public JButton[] botonesUsuario;
     public JButton[] botonesMunicipio;
     public JButton[] botonesConvocatoria;
     public JButton[] botonesPresentacion;
 
-    public AdministradorView() {
+    public CuentadanteView() {
         initComponents();
-        initBotonesUsuario();
         initBotonesMunicipio();
         initBotonesConvocatoria();
         initBotonesPresentacion();
@@ -42,34 +40,22 @@ public class AdministradorView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -98,19 +84,6 @@ public class AdministradorView extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.GridLayout(2, 0));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-
-        jButton1.setText("Alta");
-        jPanel7.add(jButton1);
-
-        jButton2.setText("Baja");
-        jPanel7.add(jButton2);
-
-        jButton3.setText("Modificar");
-        jPanel7.add(jButton3);
-
-        jButton4.setText("Visualizar");
-        jPanel7.add(jButton4);
-
         jPanel2.add(jPanel7);
 
         jPanel8.setBackground(new java.awt.Color(153, 153, 153));
@@ -129,15 +102,6 @@ public class AdministradorView extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.GridLayout(2, 0));
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-
-        jButton5.setText("Alta");
-        jPanel9.add(jButton5);
-
-        jButton6.setText("Baja");
-        jPanel9.add(jButton6);
-
-        jButton7.setText("Modificar");
-        jPanel9.add(jButton7);
 
         jButton8.setText("Visualizar");
         jPanel9.add(jButton8);
@@ -160,15 +124,6 @@ public class AdministradorView extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.GridLayout(2, 0));
 
         jPanel11.setBackground(new java.awt.Color(204, 204, 204));
-
-        jButton10.setText("Alta");
-        jPanel11.add(jButton10);
-
-        jButton11.setText("Baja");
-        jPanel11.add(jButton11);
-
-        jButton12.setText("Modificar");
-        jPanel11.add(jButton12);
 
         jButton17.setText("Visualizar");
         jPanel11.add(jButton17);
@@ -195,14 +150,8 @@ public class AdministradorView extends javax.swing.JFrame {
         jButton9.setText("Alta");
         jPanel13.add(jButton9);
 
-        jButton14.setText("Baja");
-        jPanel13.add(jButton14);
-
         jButton15.setText("Modificar");
         jPanel13.add(jButton15);
-
-        jButton16.setText("Visualizar");
-        jPanel13.add(jButton16);
 
         jPanel5.add(jPanel13);
 
@@ -264,39 +213,28 @@ public class AdministradorView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdministradorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuentadanteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdministradorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuentadanteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdministradorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuentadanteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdministradorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuentadanteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdministradorView().setVisible(true);
+                new CuentadanteView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -321,35 +259,20 @@ public class AdministradorView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 
-    private void initBotonesUsuario() {
-        this.botonesUsuario = new JButton[3];
-        this.botonesUsuario[0] = this.jButton1;
-        this.botonesUsuario[1] = this.jButton2;
-        this.botonesUsuario[2] = this.jButton3;
-        this.botonesUsuario[3] = this.jButton4;
-    }
 
     private void initBotonesMunicipio() {
-        this.botonesMunicipio = new JButton[3];
-        this.botonesMunicipio[0] = this.jButton5;
-        this.botonesMunicipio[1] = this.jButton6;
-        this.botonesMunicipio[2] = this.jButton7;
+        this.botonesMunicipio = new JButton[0];
         this.botonesMunicipio[3] = this.jButton8;
     }
     
     private void initBotonesConvocatoria() {
-        this.botonesConvocatoria = new JButton[3];
-        this.botonesConvocatoria[0] = this.jButton10;
-        this.botonesConvocatoria[2] = this.jButton11;
-        this.botonesConvocatoria[3] = this.jButton12;
+        this.botonesConvocatoria = new JButton[0];
         this.botonesConvocatoria[4] = this.jButton17;
     }
     
     private void initBotonesPresentacion() {
-        this.botonesPresentacion = new JButton[3];
+        this.botonesPresentacion = new JButton[1];
         this.botonesPresentacion[0] = this.jButton9;
-        this.botonesPresentacion[1] = this.jButton14;
         this.botonesPresentacion[2] = this.jButton15;
-        this.botonesPresentacion[3] = this.jButton16;
     }
 }

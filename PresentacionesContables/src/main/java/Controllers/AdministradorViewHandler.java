@@ -40,7 +40,7 @@ public class AdministradorViewHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.view.botonesUsuario[0]) {
-
+            
         } else if (e.getSource() == this.view.botonesUsuario[1]) {
 
         } else if (e.getSource() == this.view.botonesUsuario[2]) {
