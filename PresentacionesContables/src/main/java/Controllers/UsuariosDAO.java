@@ -114,5 +114,24 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
         return usuario;
     }
 
+    public static Usuarios getElementByUsername(String username) {
+        
+        Usuarios usuario = null;
+        Transaction trns = null;
+        Session session = ConnectionController.getSessionFactory().openSession();
+        try{
+            trns = session.beginTransaction();
+            String queryString = "from Usuarios where Nombre = :Nombre";
+            Query query = session.createQuery(queryString);
+            query.setString("Nombre", username);
+            usuario = (Usuarios) query.uniqueResult();
+        }catch(RuntimeException e){
+            e.printStackTrace();
+        }finally{
+            session.flush();
+            session.close();
+        }
+        return usuario;
+    }
 
 }
