@@ -35,11 +35,11 @@ public class FiscalViewHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.view.botonesMunicipio[0]) {
-
+            Views.Municipios.Read read_Mun_Views = new Views.Municipios.Read();
         } else if (e.getSource() == this.view.botonesConvocatoria[0]) {
-
+            Views.Convocatorias.Read read_Con_Views = new Views.Convocatorias.Read();
         } else if (e.getSource() == this.view.botonesPresentacion[0]) {
-            
+            Views.Presentaciones.Read read_Pre_Views = new Views.Presentaciones.Read();
         }
     }
 
