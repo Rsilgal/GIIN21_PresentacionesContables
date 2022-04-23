@@ -4,15 +4,23 @@
  */
 package App;
 
-import Views.LoginView;
-import Controllers.LoginController;
+//import Views.LoginView;
+//import Controllers.LoginController;
 /**
  *
  * @author rsilvente
  */
 public class main {
+//    public static void main(String[] args) {
+////        LoginView login_View = new LoginView();
+////        LoginController login_Controller = new LoginController(login_View);
+//            Views.Convocatorias.Create a = new Views.Convocatorias.Create();
+//    }
+    
     public static void main(String[] args) {
-        LoginView login_View = new LoginView();
-        LoginController login_Controller = new LoginController(login_View);
+        
+            Views.Convocatorias.Create a = new Views.Convocatorias.Create();
+            a.setVisible(true);
+            a.setLocationRelativeTo(null);
     }
 }
