@@ -36,82 +36,91 @@ public class Router {
     private Views.Usuarios.Delete user_delete = null;
     private Views.Usuarios.Read user_read = null;
     private Views.Usuarios.Update user_update = null;
-
     
-    public Router() {
+    private static Router miRouter;
+
+    public static Router getRouter() {
+        if (miRouter == null) {
+            miRouter = new Router();
+        }
+        
+        return miRouter;
+    }
+    
+    private Router() {
         this.login = new Views.LoginView();
         this.login.setVisible(true);
         this.login.setLocationRelativeTo(null);
     }
-    
+
     public void generatedViewsForAdmin() {
         this.admin = new Views.AdministradorView();
-        
+
         // Convocatorias
         this.conv_create = new Views.Convocatorias.Create();
         this.conv_delete = new Views.Convocatorias.Delete();
         this.conv_read = new Views.Convocatorias.Read();
         this.conv_update = new Views.Convocatorias.Update();
-        
+
         // Municipios
         this.mun_create = new Views.Municipios.Create();
         this.mun_delete = new Views.Municipios.Delete();
         this.mun_read = new Views.Municipios.Read();
         this.mun_update = new Views.Municipios.Update();
-        
+
         // Presentaciones
         this.pres_create = new Views.Presentaciones.Create();
         this.pres_delete = new Views.Presentaciones.Delete();
         this.pres_read = new Views.Presentaciones.Read();
         this.pres_update = new Views.Presentaciones.Update();
-        
+
         // Usuarios
         this.user_create = new Views.Usuarios.Create();
         this.user_delete = new Views.Usuarios.Delete();
         this.user_read = new Views.Usuarios.Read();
         this.user_update = new Views.Usuarios.Update();
     }
-    
+
     public void generatedViewsForCuentadante() {
         this.cuentadante = new Views.CuentadanteView();
-        
+
         this.mun_read = new Views.Municipios.Read();
-        
+
         this.conv_read = new Views.Convocatorias.Read();
-        
+
         this.pres_read = new Views.Presentaciones.Read();
     }
-    
+
     public void generatedViewsForFiscalGeneral() {
         this.fiscalGeneral = new Views.FiscalGeneralView();
-        
+
         this.conv_create = new Views.Convocatorias.Create();
         this.conv_delete = new Views.Convocatorias.Delete();
         this.conv_read = new Views.Convocatorias.Read();
         this.conv_update = new Views.Convocatorias.Update();
-        
+
         this.mun_read = new Views.Municipios.Read();
-        
+
         this.pres_read = new Views.Presentaciones.Read();
         this.pres_update = new Views.Presentaciones.Update();
     }
-    
+
     public void generatedViewsForFiscal() {
         this.fiscal = new Views.FiscalView();
-        
+
         this.mun_read = new Views.Municipios.Read();
-        
+
         this.conv_read = new Views.Convocatorias.Read();
-        
+
         this.pres_read = new Views.Presentaciones.Read();
-        
+
     }
 
     public void navigateTo(JFrame actual, JFrame destino) {
         actual.setVisible(false);
         destino.setVisible(true);
     }
-    
+
     public Views.AdministradorView getAdmin() {
         return admin;
     }
@@ -195,5 +204,5 @@ public class Router {
     public Views.Usuarios.Update getUser_update() {
         return user_update;
     }
-    
+
 }
