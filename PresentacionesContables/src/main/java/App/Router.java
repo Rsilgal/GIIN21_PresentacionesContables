@@ -57,65 +57,97 @@ public class Router {
 
     public void generatedViewsForAdmin() {
         this.admin = new Views.AdministradorView();
+        Handler.getHandler().createAdministradorHandler(admin);
 
         // Convocatorias
         this.conv_create = new Views.Convocatorias.Create();
+        Handler.getHandler().createConvocatorias_C(conv_create);
         this.conv_delete = new Views.Convocatorias.Delete();
+        Handler.getHandler().createConvocatorias_D(conv_delete);
         this.conv_read = new Views.Convocatorias.Read();
+        Handler.getHandler().createConvocatorias_R(conv_read);
         this.conv_update = new Views.Convocatorias.Update();
+        Handler.getHandler().createConvocatorias_U(conv_update);
 
         // Municipios
         this.mun_create = new Views.Municipios.Create();
+        Handler.getHandler().createMunicipios_C(mun_create);
         this.mun_delete = new Views.Municipios.Delete();
+        Handler.getHandler().createMunicipios_D(mun_delete);
         this.mun_read = new Views.Municipios.Read();
+        Handler.getHandler().createMunicipios_R(mun_read);
         this.mun_update = new Views.Municipios.Update();
+        Handler.getHandler().createMunicipios_U(mun_update);
 
         // Presentaciones
         this.pres_create = new Views.Presentaciones.Create();
+        Handler.getHandler().createPresentaciones_C(pres_create);
         this.pres_delete = new Views.Presentaciones.Delete();
+        Handler.getHandler().createMunicipios_D(mun_delete);
         this.pres_read = new Views.Presentaciones.Read();
+        Handler.getHandler().createMunicipios_R(mun_read);
         this.pres_update = new Views.Presentaciones.Update();
+        Handler.getHandler().createPresentaciones_U(pres_update);
 
         // Usuarios
         this.user_create = new Views.Usuarios.Create();
+        Handler.getHandler().createUsuarios_C(user_create);
         this.user_delete = new Views.Usuarios.Delete();
+        Handler.getHandler().createUsuarios_D(user_delete);
         this.user_read = new Views.Usuarios.Read();
+        Handler.getHandler().createUsuarios_R(user_read);
         this.user_update = new Views.Usuarios.Update();
+        Handler.getHandler().createUsuarios_U(user_update);
     }
 
     public void generatedViewsForCuentadante() {
         this.cuentadante = new Views.CuentadanteView();
+        Handler.getHandler().createCuentadanteHandler(cuentadante);
 
         this.mun_read = new Views.Municipios.Read();
+        Handler.getHandler().createMunicipios_R(mun_read);
 
         this.conv_read = new Views.Convocatorias.Read();
+        Handler.getHandler().createConvocatorias_R(conv_read);
 
         this.pres_read = new Views.Presentaciones.Read();
+        Handler.getHandler().createPresentaciones_R(pres_read);
     }
 
     public void generatedViewsForFiscalGeneral() {
         this.fiscalGeneral = new Views.FiscalGeneralView();
+        Handler.getHandler().createFiscalGeneralHandler(fiscalGeneral);
 
         this.conv_create = new Views.Convocatorias.Create();
+        Handler.getHandler().createConvocatorias_C(conv_create);
         this.conv_delete = new Views.Convocatorias.Delete();
+        Handler.getHandler().createConvocatorias_D(conv_delete);
         this.conv_read = new Views.Convocatorias.Read();
+        Handler.getHandler().createConvocatorias_R(conv_read);
         this.conv_update = new Views.Convocatorias.Update();
+        Handler.getHandler().createConvocatorias_U(conv_update);
 
         this.mun_read = new Views.Municipios.Read();
+        Handler.getHandler().createMunicipios_R(mun_read);
 
         this.pres_read = new Views.Presentaciones.Read();
+        Handler.getHandler().createPresentaciones_R(pres_read);
         this.pres_update = new Views.Presentaciones.Update();
+        Handler.getHandler().createPresentaciones_U(pres_update);
     }
 
     public void generatedViewsForFiscal() {
         this.fiscal = new Views.FiscalView();
+        Handler.getHandler().createFiscal(fiscal);
 
         this.mun_read = new Views.Municipios.Read();
+        Handler.getHandler().createMunicipios_R(mun_read);
 
         this.conv_read = new Views.Convocatorias.Read();
+        Handler.getHandler().createConvocatorias_R(conv_read);
 
         this.pres_read = new Views.Presentaciones.Read();
-
+        Handler.getHandler().createPresentaciones_R(pres_read);
     }
 
     public void navigateTo(JFrame actual, JFrame destino) {
