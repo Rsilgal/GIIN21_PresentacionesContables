@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import App.Router;
 import Models.Usuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,20 +38,16 @@ public class LoginController implements ActionListener {
                 
                 switch (user.getTipoUsuario().getNombre()) {
                     case "Administrador":
-                        AdministradorView admin_View = new AdministradorView();
-                        AdministradorViewHandler admin_Handler = new AdministradorViewHandler(admin_View);
+                        Router.getRouter().generatedViewsForAdmin();
                         break;
                     case "FiscalGeneral":
-                        FiscalGeneralView fiscalGen_View = new FiscalGeneralView();
-                        FiscalGeneralViewHandler fiscalGen_Handler = new FiscalGeneralViewHandler(fiscalGen_View);
+                        Router.getRouter().generatedViewsForFiscalGeneral();
                         break;
                     case "Fiscal":
-                        FiscalView fiscal_View = new FiscalView();
-                        FiscalViewHandler fiscal_Handler = new FiscalViewHandler(fiscal_View);
+                        Router.getRouter().generatedViewsForFiscal();
                         break;
                     default:
-                        CuentadanteView cuentadante_View = new CuentadanteView();
-                        CuentadanteViewHandler cuentadante_Handler = new CuentadanteViewHandler(cuentadante_View);
+                        Router.getRouter().generatedViewsForCuentadante();
                         break;
                 }
             }
