@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import App.Router;
 import Views.Presentaciones.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -60,19 +61,27 @@ public class PresentacionesViewHandler implements ActionListener {
         Component component = (Component) e.getSource();
         if (component.getParent() == this.create) {
             if (component == this.create.btnConfirmar) {
-                
+             
+                Router.getRouter().navigateTo(this.create, 
+                        Router.getRouter().getLastFrame());
             }
         } else if (component.getParent() == this.delete) {
             if (component == this.delete.btnBorrar) {
                 
+                Router.getRouter().navigateTo(this.delete, 
+                        Router.getRouter().getLastFrame());
             }
         } else if (component.getParent() == this.read) {
             if (component == this.read.btnVolver) {
                 
+                Router.getRouter().navigateTo(this.read, 
+                        Router.getRouter().getLastFrame());
             }
         } else if (component.getParent() == this.update) {
             if (component == this.update.btnConfirmar) {
                 
+                Router.getRouter().navigateTo(this.update, 
+                        Router.getRouter().getLastFrame());
             }
         }
         

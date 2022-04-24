@@ -37,6 +37,8 @@ public class Router {
     private Views.Usuarios.Read user_read = null;
     private Views.Usuarios.Update user_update = null;
     
+    private JFrame lastFrame = null;
+    
     private static Router miRouter;
 
     public static Router getRouter() {
@@ -118,6 +120,7 @@ public class Router {
 
     public void navigateTo(JFrame actual, JFrame destino) {
         actual.setVisible(false);
+        lastFrame = actual;
         destino.setVisible(true);
     }
 
@@ -203,6 +206,10 @@ public class Router {
 
     public Views.Usuarios.Update getUser_update() {
         return user_update;
+    }
+
+    public JFrame getLastFrame() {
+        return lastFrame;
     }
 
 }
