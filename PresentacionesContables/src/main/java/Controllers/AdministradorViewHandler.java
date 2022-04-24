@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import App.Router;
 import Views.AdministradorView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,38 +41,53 @@ public class AdministradorViewHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.view.botonesUsuario[0]) {
-            this.view.setVisible(false);
-            Views.Usuarios.Create create_User_View = new Views.Usuarios.Create();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getUser_create());
         } else if (e.getSource() == this.view.botonesUsuario[1]) {
-            Views.Usuarios.Delete delete_User_View = new Views.Usuarios.Delete();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getUser_delete());
         } else if (e.getSource() == this.view.botonesUsuario[2]) {
-            Views.Usuarios.Update update_User_View = new Views.Usuarios.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getUser_update());
         } else if (e.getSource() == this.view.botonesUsuario[3]) {
-            Views.Usuarios.Read read_User_View = new Views.Usuarios.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getUser_read());
         } else if (e.getSource() == this.view.botonesMunicipio[0]) {
-            Views.Municipios.Create create_Mun_View = new Views.Municipios.Create();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getMun_create());
         } else if (e.getSource() == this.view.botonesMunicipio[1]) {
-            Views.Municipios.Delete delete_Mun_View = new Views.Municipios.Delete();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getMun_delete());
         } else if (e.getSource() == this.view.botonesMunicipio[2]) {
-            Views.Municipios.Update update_Mun_View = new Views.Municipios.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getMun_update());
         } else if (e.getSource() == this.view.botonesMunicipio[3]) {
-            Views.Municipios.Read read_Mun_View = new Views.Municipios.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getMun_read());
         } else if (e.getSource() == this.view.botonesConvocatoria[0]) {
-            Views.Convocatorias.Create create_Conv_View = new Views.Convocatorias.Create();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getConv_create());
         } else if (e.getSource() == this.view.botonesConvocatoria[1]) {
-            Views.Convocatorias.Delete delete_Conv_View = new Views.Convocatorias.Delete();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getConv_delete());
         } else if (e.getSource() == this.view.botonesConvocatoria[2]) {
-            Views.Convocatorias.Update update_Conv_View = new Views.Convocatorias.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getConv_update());
         } else if (e.getSource() == this.view.botonesConvocatoria[3]) {
-            Views.Convocatorias.Read read_Conv_View = new Views.Convocatorias.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getConv_read());
         } else if (e.getSource() == this.view.botonesPresentacion[0]) {
-            Views.Presentaciones.Create create_Pre_View = new Views.Presentaciones.Create();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getPres_create());
         } else if (e.getSource() == this.view.botonesPresentacion[1]) {
-            Views.Presentaciones.Delete delete_Pre_View = new Views.Presentaciones.Delete();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getPres_delete());
         } else if (e.getSource() == this.view.botonesPresentacion[2]) {
-            Views.Presentaciones.Update update_Pre_View = new Views.Presentaciones.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getPres_update());
         } else if (e.getSource() == this.view.botonesPresentacion[3]) {
-            Views.Presentaciones.Read read_Pre_View = new Views.Presentaciones.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getAdmin(), 
+                    Router.getRouter().getPres_read());
         }
     }
 

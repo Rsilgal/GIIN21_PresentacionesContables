@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import App.Router;
 import Views.CuentadanteView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,13 +36,17 @@ public class CuentadanteViewHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.view.botonesMunicipio[0]) {
-            Views.Municipios.Read read_Mun_View = new Views.Municipios.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getCuentadante(),
+                    Router.getRouter().getUser_read());
         } else if (e.getSource() == this.view.botonesConvocatoria[0]) {
-            Views.Convocatorias.Read read_Con_View = new Views.Convocatorias.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getCuentadante(),
+                    Router.getRouter().getConv_read());
         } else if (e.getSource() == this.view.botonesPresentacion[0]) {
-            Views.Presentaciones.Create create_Pre_View = new Views.Presentaciones.Create();
+            Router.getRouter().navigateTo(Router.getRouter().getCuentadante(),
+                    Router.getRouter().getPres_create());
         } else if (e.getSource() == this.view.botonesPresentacion[1]) {
-            Views.Presentaciones.Update update_Pre_View = new Views.Presentaciones.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getCuentadante(),
+                    Router.getRouter().getPres_update());
         }
     }
 

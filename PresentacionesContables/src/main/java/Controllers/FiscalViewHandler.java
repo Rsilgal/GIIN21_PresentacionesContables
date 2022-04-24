@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import App.Router;
 import Views.FiscalView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,11 +36,14 @@ public class FiscalViewHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.view.botonesMunicipio[0]) {
-            Views.Municipios.Read read_Mun_Views = new Views.Municipios.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscal(), 
+                    Router.getRouter().getMun_read());
         } else if (e.getSource() == this.view.botonesConvocatoria[0]) {
-            Views.Convocatorias.Read read_Con_Views = new Views.Convocatorias.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscal(), 
+                    Router.getRouter().getConv_read());
         } else if (e.getSource() == this.view.botonesPresentacion[0]) {
-            Views.Presentaciones.Read read_Pre_Views = new Views.Presentaciones.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscal(), 
+                    Router.getRouter().getPres_read());
         }
     }
 

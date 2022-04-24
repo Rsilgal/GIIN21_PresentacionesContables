@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import App.Router;
 import Views.FiscalGeneralView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,19 +36,26 @@ public class FiscalGeneralViewHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.view.botonesMunicipio[0]) {
-            Views.Municipios.Read read_Mun_View = new Views.Municipios.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getMun_read());
         } else if (e.getSource() == this.view.botonesConvocatoria[0]) {
-            Views.Convocatorias.Create create_Con_View = new Views.Convocatorias.Create();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getConv_create());
         } else if (e.getSource() == this.view.botonesConvocatoria[1]) {
-            Views.Convocatorias.Delete delete_Con_View = new Views.Convocatorias.Delete();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getConv_delete());
         } else if (e.getSource() == this.view.botonesConvocatoria[2]) {
-            Views.Convocatorias.Update update_Con_View = new Views.Convocatorias.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getConv_update());
         } else if (e.getSource() == this.view.botonesConvocatoria[3]) {
-            Views.Convocatorias.Read read_Con_View = new Views.Convocatorias.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getConv_read());
         } else if (e.getSource() == this.view.botonesPresentacion[0]) {
-            Views.Presentaciones.Update update_Pre_View = new Views.Presentaciones.Update();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getPres_update());
         } else if (e.getSource() == this.view.botonesPresentacion[1]) {
-            Views.Presentaciones.Read read_Pre_View = new Views.Presentaciones.Read();
+            Router.getRouter().navigateTo(Router.getRouter().getFiscalGeneral(), 
+                    Router.getRouter().getPres_read());
         }
     }
 
