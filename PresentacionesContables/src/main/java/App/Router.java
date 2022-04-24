@@ -66,10 +66,10 @@ public class Router {
         this.pres_update = new Views.Presentaciones.Update();
         
         // Usuarios
-        this.mun_create = new Views.Municipios.Create();
-        this.mun_delete = new Views.Municipios.Delete();
-        this.mun_read = new Views.Municipios.Read();
-        this.mun_update = new Views.Municipios.Update();
+        this.user_create = new Views.Usuarios.Create();
+        this.user_delete = new Views.Usuarios.Delete();
+        this.user_read = new Views.Usuarios.Read();
+        this.user_update = new Views.Usuarios.Update();
     }
     
     public void generatedViewsForCuentadante() {
