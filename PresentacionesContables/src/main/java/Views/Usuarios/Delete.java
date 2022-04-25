@@ -4,6 +4,9 @@
  */
 package Views.Usuarios;
 
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author rsilvente
@@ -17,6 +20,18 @@ public class Delete extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public JComboBox<String> getjComboBox2() {
+        return jComboBox2;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,10 +43,8 @@ public class Delete extends javax.swing.JFrame {
 
         btnBorrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
 
@@ -44,15 +57,10 @@ public class Delete extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre:");
 
-        jLabel2.setText("Clave:");
-
         jLabel3.setText("Tipo Usuario:");
 
         jTextField1.setText("jTextField1");
         jTextField1.setEnabled(false);
-
-        jTextField2.setText("jTextField2");
-        jTextField2.setEnabled(false);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setEnabled(false);
@@ -71,17 +79,15 @@ public class Delete extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(40, 40, 40))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jComboBox1, jTextField1, jTextField2});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jComboBox1, jTextField1});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,11 +98,7 @@ public class Delete extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,9 +150,7 @@ public class Delete extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

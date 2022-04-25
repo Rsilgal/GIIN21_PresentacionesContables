@@ -74,13 +74,13 @@ public class ConvocatoriasViewHandler implements ActionListener {
             }
         } else if (component.getParent() == this.read) {
             if (component == this.read.btnVolver) {
-                
+                leerElemento();
                 Router.getRouter().navigateTo(this.read, 
                         Router.getRouter().getLastFrame());
             }
         } else if (component.getParent() == this.update) {
             if (component == this.update.btnConfirmar) {
-                
+                actualizarElemento();
                 Router.getRouter().navigateTo(this.update, 
                         Router.getRouter().getLastFrame());
             }
@@ -93,10 +93,10 @@ public class ConvocatoriasViewHandler implements ActionListener {
         
         dao.addElemet(
         new Convocatorias(
-                "",
+                create.getjTextField1().getText(),
                 new Timestamp(create.getOpenYear(), create.getOpenMonth(), create.getOpenDay(), 0, 0, 0, 0),
                 new Timestamp(create.getCloseYear(), create.getCloseMonth(), create.getCloseDay(), 0, 0, 0, 0),
-                false,
+                create.getjRadioButton1().isSelected(),
                 new Models.Tipos.TipoDocumentacion()
         ));
     }
@@ -108,9 +108,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
         dao.deleteElement(elemento.getId());
     }
     
-    private void leerElemento() {
-        ConvocatoriasDAO dao = new ConvocatoriasDAO();
-        
+    private void leerElemento() {        
         Convocatorias elemento = (Convocatorias) read.getjComboBox1().getSelectedItem();
         
         read.getjTextField1().setText(elemento.getNombre());

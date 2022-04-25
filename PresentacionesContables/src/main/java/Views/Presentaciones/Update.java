@@ -4,6 +4,10 @@
  */
 package Views.Presentaciones;
 
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author rsilvente
@@ -15,6 +19,42 @@ public class Update extends javax.swing.JFrame {
      */
     public Update() {
         initComponents();
+    }
+
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public JComboBox<String> getjComboBox2() {
+        return jComboBox2;
+    }
+
+    public JComboBox<String> getjList1() {
+        return jList1;
+    }
+
+    public int getOpenDay() {
+        return Integer.parseInt(openDay.toString());
+    }
+
+    public int getOpenMonth() {
+        return Integer.parseInt(openMonth.toString());
+    }
+
+    public int getOpenYear() {
+        return Integer.parseInt(openYear.toString());
+    }
+
+    public void setOpenDay(JComboBox<String> openDay) {
+        this.openDay = openDay;
+    }
+
+    public void setOpenMonth(JComboBox<String> openMonth) {
+        this.openMonth = openMonth;
+    }
+
+    public void setOpenYear(JComboBox<String> openYear) {
+        this.openYear = openYear;
     }
 
     /**
@@ -34,9 +74,8 @@ public class Update extends javax.swing.JFrame {
         openDay = new javax.swing.JComboBox<>();
         openMonth = new javax.swing.JComboBox<>();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jList1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,14 +100,9 @@ public class Update extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jList1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,7 +133,7 @@ public class Update extends javax.swing.JFrame {
                                         .addComponent(openYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane1))))))
+                                    .addComponent(jList1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addGap(39, 39, 39))
         );
 
@@ -108,7 +142,7 @@ public class Update extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -121,10 +155,10 @@ public class Update extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(97, 97, 97)
                 .addComponent(btnConfirmar)
                 .addGap(30, 30, 30))
         );
@@ -179,8 +213,7 @@ public class Update extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jList1;
     private javax.swing.JComboBox<String> openDay;
     private javax.swing.JComboBox<String> openMonth;
     private javax.swing.JComboBox<String> openYear;
@@ -189,9 +222,9 @@ public class Update extends javax.swing.JFrame {
     private javax.swing.DefaultComboBoxModel getDaysOfMonth(String month) {
         javax.swing.DefaultComboBoxModel model = new javax.swing.DefaultComboBoxModel();
         int upperLimit = 31;
-        
+
         switch (month) {
-            case "02":           
+            case "02":
                 upperLimit = 28;
                 break;
             case "04":
@@ -201,12 +234,12 @@ public class Update extends javax.swing.JFrame {
                 upperLimit = 30;
                 break;
         }
-        
+
         for (int i = 1; i <= upperLimit; i++) {
             model.addElement(String.valueOf(i));
         }
-        
+
         return model;
     }
-    
+
 }

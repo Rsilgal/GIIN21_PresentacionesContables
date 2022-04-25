@@ -4,6 +4,10 @@
  */
 package Views.Presentaciones;
 
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author rsilvente
@@ -15,6 +19,26 @@ public class Create extends javax.swing.JFrame {
      */
     public Create() {
         initComponents();
+    }
+
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public int getOpenDay() {
+        return Integer.parseInt(openDay.toString());
+    }
+
+    public int getOpenMonth() {
+        return Integer.parseInt(openMonth.toString());
+    }
+
+    public int getOpenYear() {
+        return Integer.parseInt(openYear.toString());
+    }
+
+    public JComboBox<String> getjList1() {
+        return jList1;
     }
 
     /**
@@ -33,9 +57,8 @@ public class Create extends javax.swing.JFrame {
         openDay = new javax.swing.JComboBox<>();
         openMonth = new javax.swing.JComboBox<>();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         btnConfirmar = new javax.swing.JButton();
+        jList1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,14 +81,9 @@ public class Create extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
         btnConfirmar.setText("Confirmar");
+
+        jList1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,7 +108,7 @@ public class Create extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(openYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1))))
+                            .addComponent(jList1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -107,12 +125,12 @@ public class Create extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(97, 97, 97)
                 .addComponent(btnConfirmar)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,8 +182,7 @@ public class Create extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jList1;
     private javax.swing.JComboBox<String> openDay;
     private javax.swing.JComboBox<String> openMonth;
     private javax.swing.JComboBox<String> openYear;

@@ -35,10 +35,10 @@
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="25" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField2" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" linkSize="1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jTextField1" linkSize="1" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="jComboBox1" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -59,7 +59,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -102,11 +102,6 @@
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -136,6 +131,11 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

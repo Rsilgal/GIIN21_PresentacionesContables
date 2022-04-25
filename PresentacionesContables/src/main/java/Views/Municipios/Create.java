@@ -4,6 +4,9 @@
  */
 package Views.Municipios;
 
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author rsilvente
@@ -17,6 +20,18 @@ public class Create extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public JComboBox<String> getjComboBox2() {
+        return jComboBox2;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
