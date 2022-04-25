@@ -4,6 +4,10 @@
  */
 package Views.Convocatorias;
 
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author rsilvente
@@ -19,6 +23,40 @@ public class Create extends javax.swing.JFrame {
         closeDay.setModel(this.getDaysOfMonth(closeMonth.getSelectedItem().toString()));
     }
 
+    public int getCloseDay() {
+        return Integer.parseInt(closeDay.toString());
+    }
+
+    public int getCloseMonth() {
+        return Integer.parseInt(closeMonth.toString());
+    }
+
+    public int getCloseYear() {
+        return Integer.parseInt(closeyear.toString());
+    }
+
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public int getOpenDay() {
+        return Integer.parseInt(openDay.toString());
+    }
+
+    public int getOpenMonth() {
+        return Integer.parseInt(openMonth.toString());
+    }
+
+    public int getOpenYear() {
+        return Integer.parseInt(openYear.toString());
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

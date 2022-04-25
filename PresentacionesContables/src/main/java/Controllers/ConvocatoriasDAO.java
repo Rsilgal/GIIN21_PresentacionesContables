@@ -116,5 +116,25 @@ public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
         }
         return convocatoria;
     }
+    
+    public int getElementIdByNombre(String nombre) {
+        int convocatoria = 0;
+        Transaction trns = null;
+        Session session = ConnectionController.getSessionFactory().openSession();
+        
+        try {
+            trns = session.getTransaction();
+            String queryString = "from Municipios where Nombre = :nombre";
+            Query query = session.createQuery(queryString);
+            query.setString("nombre", nombre);
+            convocatoria = (int) query.uniqueResult();
+        }catch(RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return convocatoria;
+    }
 
 }

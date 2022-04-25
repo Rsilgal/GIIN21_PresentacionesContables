@@ -5,10 +5,12 @@
 package Controllers;
 
 import App.Router;
+import Models.Convocatorias;
 import Views.Convocatorias.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Timestamp;
 /**
  *
  * @author rsilvente
@@ -60,13 +62,13 @@ public class ConvocatoriasViewHandler implements ActionListener {
         Component component = (Component) e.getSource();
         if (component.getParent() == this.create) {
             if (component == this.create.btnConfirmar) {
-                
+                agregarElemento();
                 Router.getRouter().navigateTo(this.create, 
                         Router.getRouter().getLastFrame());
             }
         } else if (component.getParent() == this.delete) {
             if (component == this.delete.btnBorrar) {
-                
+                eliminarElemento();
                 Router.getRouter().navigateTo(this.delete, 
                         Router.getRouter().getLastFrame());
             }
@@ -84,6 +86,50 @@ public class ConvocatoriasViewHandler implements ActionListener {
             }
         }
         
+    }
+
+    private void agregarElemento() {
+        ConvocatoriasDAO dao = new ConvocatoriasDAO();
+        
+        dao.addElemet(
+        new Convocatorias(
+                "",
+                new Timestamp(create.getOpenYear(), create.getOpenMonth(), create.getOpenDay(), 0, 0, 0, 0),
+                new Timestamp(create.getCloseYear(), create.getCloseMonth(), create.getCloseDay(), 0, 0, 0, 0),
+                false,
+                new Models.Tipos.TipoDocumentacion()
+        ));
+    }
+
+    private void eliminarElemento() {
+        ConvocatoriasDAO dao = new ConvocatoriasDAO();
+        
+        Convocatorias elemento = (Convocatorias) delete.getListConvocatorias().getSelectedItem();
+        dao.deleteElement(elemento.getId());
+    }
+    
+    private void leerElemento() {
+        ConvocatoriasDAO dao = new ConvocatoriasDAO();
+        
+        Convocatorias elemento = (Convocatorias) read.getjComboBox1().getSelectedItem();
+        
+        read.getjTextField1().setText(elemento.getNombre());
+        read.getjTextField2().setText("Tiempo 1");
+        read.getjTextField3().setText("Tiempo 2");
+        read.getjTextField4().setText("Texto");
+    }
+    
+    private void actualizarElemento() {
+        ConvocatoriasDAO dao = new ConvocatoriasDAO();
+        
+        Convocatorias elemento = (Convocatorias) read.getjComboBox1().getSelectedItem();
+        
+        elemento.setNombre(update.getjTextField1().getText());
+        elemento.setFechaApertura(new Timestamp(update.getOpenYear(), update.getOpenMonth(), update.getOpenDay(), 0, 0, 0, 0));
+        elemento.setFechaCierre(new Timestamp(update.getCloseYear(), update.getCloseMonth(), update.getCloseDay(), 0, 0, 0, 0));
+        elemento.setEstadoApertura(update.getjRadioButton1().isSelected());
+        
+        dao.updateElement(elemento);
     }
     
 }
