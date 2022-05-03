@@ -14,7 +14,8 @@ import org.hibernate.metamodel.Metadata;
 import org.hibernate.metamodel.MetadataSources;
 
 /**
- *
+ * Esta clase define y configura el método de conexión con la base de datos 
+ * usada para la aplicación.
  * @author rsilvente
  */
 public class ConnectionController {
@@ -33,6 +34,11 @@ public class ConnectionController {
         }
     }
     
+    /**
+     * 
+     * @return Devuelve el objeto SessionFactory mediante el cual se pueden 
+     * realizar consultas a la base de datos del sistema.
+     */
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }

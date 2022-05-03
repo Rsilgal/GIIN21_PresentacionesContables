@@ -18,6 +18,10 @@ import org.hibernate.Session;
  */
 public class UsuariosDAO implements ICRUD<Usuarios> {
 
+    /**
+     * Método con el cual generamos un nuevo Usuario en la Base de Datos.
+     * @param element 
+     */
     @Override
     public void addElemet(Usuarios element) {
         Transaction trns = null;
@@ -37,6 +41,10 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
         }
     }
 
+    /**
+     * Método con el cual Actualizamos un Usuario en la Base de Datos.
+     * @param element Instancia de la clase Usuario.
+     */
     @Override
     public void updateElement(Usuarios element) {
         Transaction trns = null;
@@ -56,6 +64,10 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
         }
     }
 
+    /**
+     * Mëtodo mediante el cual Eliminaremos un Usuario de la Base de Datos.
+     * @param id Identidicador del Usuario seleccionado.
+     */
     @Override
     public void deleteElement(int id) {
         Transaction trns = null;
@@ -76,7 +88,11 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
         }
     }
     
-
+    /**
+     * Método con el que obtenemos un listado de los Usuarios presentes 
+     * en la Base de Datos.
+     * @return Listado de los Usuarios presentes en la Base de Datos.
+     */
     @Override
     public List<Usuarios> getAllElements() {
         List<Usuarios> usuarios = new ArrayList<Usuarios>();
@@ -94,6 +110,12 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
         return usuarios;
     }
 
+    /**
+     * Método con el que obtendremos los datos de un Usuario en concreto.
+     * @param id Identificador únmico del Usuario que queremos obtener.
+     * @return Devuelve el Usuario cuyo ID coincide con el ID indicado
+     * como parámetro de entrada.
+     */
     @Override
     public Usuarios getElementById(int id) {
         Usuarios usuario = null;
@@ -114,6 +136,12 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
         return usuario;
     }
 
+    /**
+     * Método con el cual obtenemos los datos de un Usuario en función del 
+     * Nombre.
+     * @param username Nombre del Usuario.
+     * @return Devuelve una instancia del Usuario buscado.
+     */
     public static Usuarios getElementByUsername(String username) {
         
         Usuarios usuario = null;

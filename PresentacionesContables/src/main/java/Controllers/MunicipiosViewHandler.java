@@ -22,37 +22,73 @@ public class MunicipiosViewHandler implements ActionListener {
     Read read;
     Update update;
     
+    /**
+     * 
+     * @return Devuelve la instancia de la ventana Create de las Municipios.
+     */
     public Create getCreate() {
         return create;
     }
 
+    /**
+     * Crea la relación de la Ventana Create de las Municipios y define 
+     * los eventos de esta.
+     * @param create Instancia de la ventana Create de las Municipios.
+     */
     public void setCreate(Create create) {
         this.create = create;
         this.create.btnConfirmar.addActionListener(this);
     }
 
+    /**
+     * 
+     * @return Devuelve la instancia de la ventana Delete de las Municipios.
+     */
     public Delete getDelete() {
         return delete;
     }
 
+    /**
+     * Crea la relacion de la Ventana Delete de las Municipios y define 
+     * los eventos de esta.
+     * @param delete Instancia de la ventena Delete de las Municipios.
+     */
     public void setDelete(Delete delete) {
         this.delete = delete;
         this.delete.btnBorrar.addActionListener(this);
     }
 
+    /**
+     * 
+     * @return Devuelve la instancia de la ventana Read de las Municipios.
+     */
     public Read getRead() {
         return read;
     }
 
+    /**
+     * Crea la relacion de la ventana Read de las Municipios y define 
+     * los eventos de esta.
+     * @param read Instancia de la ventana Read de las Municipios.
+     */
     public void setRead(Read read) {
         this.read = read;
         this.read.btnVolver.addActionListener(this);
     }
 
+    /**
+     * 
+     * @return Devuelve la instancia de la ventana Update de las Municipios.
+     */
     public Update getUpdate() {
         return update;
     }
 
+    /**
+     * Crea la relación de la ventana Update de las Municipios y define 
+     * los eventos de esta.
+     * @param update Instancia de la ventana Update de las Municipios.
+     */
     public void setUpdate(Update update) {
         this.update = update;
         this.update.btnConfirmar.addActionListener(this);

@@ -13,11 +13,16 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- *
+ * Clase mediante la que realizamos las operaciones de CRUD a la tabla de las 
+ * Presentaciones.
  * @author rsilvente
  */
 public class PresentacionesDAO implements ICRUD<Presentaciones>{
 
+    /**
+     * Método con el cual generamos una nueva Presentacion en la Base de Datos.
+     * @param element Instancia de la clase Presentacion
+     */
     @Override
     public void addElemet(Presentaciones element) {
        Transaction trns = null;
@@ -37,6 +42,10 @@ public class PresentacionesDAO implements ICRUD<Presentaciones>{
         } 
     }
 
+    /**
+     * Método con el cual Actualizamos una Presentacion en la Base de Datos.
+     * @param element Instancia de la clase Presentacion.
+     */
     @Override
     public void updateElement(Presentaciones element) {
         Transaction trns = null;
@@ -57,6 +66,11 @@ public class PresentacionesDAO implements ICRUD<Presentaciones>{
         }
     }
 
+    /**
+     * Método mediante el cual Eliminaremos una Presentacion de la Base de 
+     * Datos.
+     * @param id Identificador de la Presentacion seleccionada.
+     */
     @Override
     public void deleteElement(int id) {
         Transaction trns = null;
@@ -78,6 +92,11 @@ public class PresentacionesDAO implements ICRUD<Presentaciones>{
         }
     }
 
+    /**
+     * Método con el que obtendremos un listado de las Presentaciones presentes 
+     * en la Base de Datos.
+     * @return Listado de las Presentaciones presentes en la Base de Datos.
+     */
     @Override
     public List<Presentaciones> getAllElements() {
         List<Presentaciones> presentaciones = new ArrayList<Presentaciones>();
@@ -86,7 +105,7 @@ public class PresentacionesDAO implements ICRUD<Presentaciones>{
         
         try {
             trns = session.getTransaction();
-            presentaciones = session.createQuery("from Convocatorias").list();
+            presentaciones = session.createQuery("from Presentaciones").list();
         } catch(RuntimeException e) {
             e.printStackTrace();
         } finally {
@@ -96,6 +115,12 @@ public class PresentacionesDAO implements ICRUD<Presentaciones>{
         return presentaciones;
     }
 
+    /**
+     * Método con el que obtendremos los datos de una Presentación en concreto.
+     * @param id Identificador único de la Presentación que queremos obtener.
+     * @return Devuelve la Presentación cuyo ID coincide con el ID indicado 
+     * como parámetro de entrada.
+     */
     @Override
     public Presentaciones getElementById(int id) {
         Presentaciones presentacion = null;

@@ -17,6 +17,10 @@ public class AdministradorViewHandler implements ActionListener {
 
     AdministradorView view;
 
+    /**
+     * Constructor.
+     * @param view Instancia de la vista que va a ser manejada.
+     */
     public AdministradorViewHandler(AdministradorView view) {
         this.view = view;
 

@@ -17,6 +17,10 @@ public class CuentadanteViewHandler implements ActionListener {
 
     CuentadanteView view;
 
+    /**
+     * Constructor del Handler.
+     * @param view Instancia de la vista manejada.
+     */
     public CuentadanteViewHandler(CuentadanteView view) {
         this.view = view;
 

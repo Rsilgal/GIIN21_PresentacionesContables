@@ -13,11 +13,16 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- *
+ * Clase mediante la que realizaremos las operaciones CRUD a la tabla de las 
+ * Convocatorias.
  * @author rsilvente
  */
 public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
 
+    /**
+     * Metodo con el cual generamos una nueva Convocatoria en la Base de Datos.
+     * @param element Instancia de la clase Convocatorias.
+     */
     @Override
     public void addElemet(Convocatorias element) {
         Transaction trns = null;
@@ -37,6 +42,10 @@ public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
         }
     }
 
+    /**
+     * Metodo con el cual Actualizamos una Convocatoria en la Base de Datos.
+     * @param element Instancia de la clase Convocatorias.
+     */
     @Override
     public void updateElement(Convocatorias element) {
         Transaction trns = null;
@@ -57,6 +66,11 @@ public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
         }
     }
 
+    /**
+     * Método mediante el cual eliminaremos una Convocatoria de la Base de 
+     * Datos.
+     * @param id Identificador de la Convocatoria seleccionada.
+     */
     @Override
     public void deleteElement(int id) {
         Transaction trns = null;
@@ -78,6 +92,11 @@ public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
         }
     }
 
+    /**
+     * Método con el que obtenemos un listado de las Convocatorias presentes 
+     * en la Base de Datos.
+     * @return Listado de las Convocatorias presentes en la Base de Datos.
+     */
     @Override
     public List<Convocatorias> getAllElements() {
         List<Convocatorias> convocatorias = new ArrayList<Convocatorias>();
@@ -96,6 +115,12 @@ public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
         return convocatorias;
     }
 
+    /**
+     * Método con el que obtendremos los datos de una Convocatoria en concreto.
+     * @param id Identificador único de la Convocatoria que queremos obtener.
+     * @return Devuelve la COnvocatoria cuyo ID coincide con el ID indicado 
+     * como parámetro de entrada.
+     */
     @Override
     public Convocatorias getElementById(int id) {
         Convocatorias convocatoria = null;
@@ -117,6 +142,11 @@ public class ConvocatoriasDAO implements ICRUD<Convocatorias> {
         return convocatoria;
     }
     
+    /**
+     * Obtenemos el Id de una Convocatoria por su Nombre
+     * @param nombre Nombre de la Convocatoria
+     * @return Devuelve el identificador (ID) de la Convocatoria.
+     */
     public int getElementIdByNombre(String nombre) {
         int convocatoria = 0;
         Transaction trns = null;

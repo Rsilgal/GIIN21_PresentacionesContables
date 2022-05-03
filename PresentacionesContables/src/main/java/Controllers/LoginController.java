@@ -19,6 +19,10 @@ public class LoginController implements ActionListener {
     LoginView login;
     Usuarios user;
 
+    /**
+     * Constructor de la vista.
+     * @param view Instancia de la vista que va a ser manejada.
+     */
     public LoginController(LoginView login) {
         user = null;
 

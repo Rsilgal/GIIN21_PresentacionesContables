@@ -17,6 +17,10 @@ public class FiscalViewHandler implements ActionListener {
 
     FiscalView view;
 
+    /**
+     * Constructor de la vista.
+     * @param view Instancia de la vista que va a ser manejada.
+     */
     public FiscalViewHandler(FiscalView view) {
         this.view = view;
 
