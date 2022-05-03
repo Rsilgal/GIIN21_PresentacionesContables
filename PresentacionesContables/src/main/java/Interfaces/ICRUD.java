@@ -7,7 +7,8 @@ package Interfaces;
 import java.util.List;
 
 /**
- *
+ * Esta interfaz define un grupo de métodos que nos permite realizar las 
+ * operaciones más basicas de un CRUD (Create - Read - Update - Delete)
  * @author rsilvente
  */
 public interface ICRUD<T> {
