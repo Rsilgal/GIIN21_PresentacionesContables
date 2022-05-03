@@ -15,6 +15,12 @@ import javax.persistence.*;
 @Table(name="municipios")
 public class Municipios {
 
+    /**
+     * Constructor de la clase Municipios
+     * @param Nombre Nombre del Municipio
+     * @param TipoMunicipio {@link Models.Tipos.TipoUsuario}
+     * @param Usuario {@link  Models.Usuarios}
+     */
     public Municipios(String Nombre, TipoMunicipio TipoMunicipio, Usuarios Usuario) {
         this.Nombre = Nombre;
         this.TipoMunicipio = TipoMunicipio;

@@ -15,6 +15,12 @@ import javax.persistence.*;
 @Table(name="usuarios")
 public class Usuarios {
 
+    /**
+     * Constructor de la clase Usuarios.
+     * @param Nombre Nombre del usuario.
+     * @param Clave Contraseña del usuario.
+     * @param TipoUsuario {@link Models.Tipos.TipoUsuario}
+     */
     public Usuarios(String Nombre, String Clave, TipoUsuario TipoUsuario) {
         this.Nombre = Nombre;
         this.Clave = Clave;

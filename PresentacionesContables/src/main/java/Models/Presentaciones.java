@@ -16,6 +16,12 @@ import javax.persistence.*;
 @Table(name="convocatorias")
 public class Presentaciones {
 
+    /**
+     * Constructor de la clase Presentaciones.
+     * @param FechaPresentacion Fecha en la cual se realiza la presentación.
+     * @param tipoDocumentacion {@link Models.Tipos.TipoDocumentacion}
+     * @param usuarios {@link Models.Usuarios}
+     */
     public Presentaciones(Timestamp FechaPresentacion, TipoDocumentacion tipoDocumentacion, Usuarios usuarios) {
         this.FechaPresentacion = FechaPresentacion;
         this.tipoDocumentacion = tipoDocumentacion;

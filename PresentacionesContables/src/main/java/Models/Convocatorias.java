@@ -15,7 +15,15 @@ import javax.persistence.*;
 @Entity
 @Table(name="convocatoria")
 public class Convocatorias {
-
+    
+    /**
+     * Constructor de la clase Convocatoria
+     * @param Nombre Nombre de la Convocatoria.
+     * @param FechaApertura Fecha en la que se abrirá la Convocatoria (Timestamp)
+     * @param FechaCierre Fecha de cierre de la Convocatoria (Timestamp)
+     * @param EstadoApertura Estado de la Convocatoria (True Or False)
+     * @param Documentacion {@link Models.Tipos.TipoDocumentacion}
+     */
     public Convocatorias(String Nombre, Timestamp FechaApertura, Timestamp FechaCierre, boolean EstadoApertura, TipoDocumentacion Documentacion) {
         this.Nombre = Nombre;
         this.FechaApertura = FechaApertura;
