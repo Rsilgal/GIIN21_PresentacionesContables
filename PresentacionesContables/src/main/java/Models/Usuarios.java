@@ -27,33 +27,57 @@ public class Usuarios {
         this.TipoUsuario = TipoUsuario;
     }
     
+    /**
+     * Constructor de la clase Usuarios
+     */
     public Usuarios() {
     }
     
+    /**
+     * @return Identificador único de la clase.
+     */
     public int getId() {
         return Id;
     }
 
+    /**
+     * @return Nombre del Usuario
+     */
     public String getNombre() {
         return Nombre;
     }
 
+    /**
+     * @param Nombre {@link Usuarios#getNombre() }
+     */
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    /**
+     * @return Contraseña del Usuario
+     */
     public String getClave() {
         return Clave;
     }
 
+    /**
+     * @param Clave {@link Usuarios#getClave() }
+     */
     public void setClave(String Clave) {
         this.Clave = Clave;
     }
 
+    /**
+     * @return Tipo de Usuario al que pertenece el Usuario
+     */
     public TipoUsuario getTipoUsuario() {
         return TipoUsuario;
     }
 
+    /**
+     * @param TipoUsuario {@link Usuarios#getTipoUsuario() }
+     */
     public void setTipoUsuario(TipoUsuario TipoUsuario) {
         this.TipoUsuario = TipoUsuario;
     }

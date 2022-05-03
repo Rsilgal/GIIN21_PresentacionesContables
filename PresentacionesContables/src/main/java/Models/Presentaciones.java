@@ -28,33 +28,57 @@ public class Presentaciones {
         this.usuarios = usuarios;
     }
     
+    /**
+     * Constructor de la clase Presentaciones
+     */
     public Presentaciones() {
     }
 
+    /**
+     * @return Identificador único de la clase.
+     */
     public int getId() {
         return Id;
     }
 
+    /**
+     * @return Fecha en la cual se realiza la presentación.
+     */
     public Timestamp getFechaPresentacion() {
         return FechaPresentacion;
     }
 
+    /**
+     * @param FechaPresentacion {@link Presentaciones#getFechaPresentacion() }
+     */
     public void setFechaPresentacion(Timestamp FechaPresentacion) {
         this.FechaPresentacion = FechaPresentacion;
     }
 
+    /**
+     * @return Instancia de TipoDocumentacion {@link Models.Tipos.TipoDocumentacion}
+     */
     public TipoDocumentacion getTipoDocumentacion() {
         return tipoDocumentacion;
     }
 
+    /**
+     * @param tipoDocumentacion {@link Presentaciones#getTipoDocumentacion() }
+     */
     public void setTipoDocumentacion(TipoDocumentacion tipoDocumentacion) {
         this.tipoDocumentacion = tipoDocumentacion;
     }
 
+    /**
+     * @return Instancia de Usuarios {@link Models.Usuarios}
+     */
     public Usuarios getUsuarios() {
         return usuarios;
     }
 
+    /**
+     * @param usuarios {@link Presentaciones#getUsuarios() }
+     */
     public void setUsuarios(Usuarios usuarios) {
         this.usuarios = usuarios;
     }

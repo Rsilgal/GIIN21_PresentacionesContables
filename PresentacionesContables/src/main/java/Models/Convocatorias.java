@@ -19,9 +19,9 @@ public class Convocatorias {
     /**
      * Constructor de la clase Convocatoria
      * @param Nombre Nombre de la Convocatoria.
-     * @param FechaApertura Fecha en la que se abrirá la Convocatoria (Timestamp)
-     * @param FechaCierre Fecha de cierre de la Convocatoria (Timestamp)
-     * @param EstadoApertura Estado de la Convocatoria (True Or False)
+     * @param FechaApertura Fecha en la que se abrirá la Convocatoria {@link Timestamp}
+     * @param FechaCierre Fecha de cierre de la Convocatoria {@link Timestamp}
+     * @param EstadoApertura Estado de la Convocatoria {@link Boolean}
      * @param Documentacion {@link Models.Tipos.TipoDocumentacion}
      */
     public Convocatorias(String Nombre, Timestamp FechaApertura, Timestamp FechaCierre, boolean EstadoApertura, TipoDocumentacion Documentacion) {
@@ -32,49 +32,85 @@ public class Convocatorias {
         this.Documentacion = Documentacion;
     }
     
+    /**
+     * Constructor de la clase Convocatorias
+     */
     public Convocatorias() {
     }
 
+    /**
+     * @return Identificador único de la clase.
+     */
     public int getId() {
         return Id;
     }
 
+    /**
+     * @return Nombre de la Convocatoria.
+     */
     public String getNombre() {
         return Nombre;
     }
 
+    /**
+     * @param Nombre {@link Convocatorias#getNombre() }
+     */
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    /**
+     * @return Fecha en la que se abrirá la Convocatoria {@link Timestamp}
+     */
     public Timestamp getFechaApertura() {
         return FechaApertura;
     }
 
+    /**
+     * @param FechaApertura {@link Convocatorias#getFechaApertura() }
+     */
     public void setFechaApertura(Timestamp FechaApertura) {
         this.FechaApertura = FechaApertura;
     }
 
+    /**
+     * @return Fecha de cierre de la Convocatoria {@link Timestamp}
+     */
     public Timestamp getFechaCierre() {
         return FechaCierre;
     }
 
+    /**
+     * @param FechaCierre {@link Convocatorias#getFechaCierre() }
+     */
     public void setFechaCierre(Timestamp FechaCierre) {
         this.FechaCierre = FechaCierre;
     }
 
+    /**
+     * @return Estado de la Convocatoria {@link Boolean}
+     */
     public boolean isEstadoApertura() {
         return EstadoApertura;
     }
 
+    /**
+     * @param EstadoApertura {@link Convocatorias#isEstadoApertura() }
+     */
     public void setEstadoApertura(boolean EstadoApertura) {
         this.EstadoApertura = EstadoApertura;
     }
 
+    /**
+     * @return Instancia de {@link Models.Tipos.TipoDocumentacion}
+     */
     public TipoDocumentacion getDocumentacion() {
         return Documentacion;
     }
 
+    /**
+     * @param Documentacion {@link Convocatorias#getDocumentacion() }
+     */
     public void setDocumentacion(TipoDocumentacion Documentacion) {
         this.Documentacion = Documentacion;
     }

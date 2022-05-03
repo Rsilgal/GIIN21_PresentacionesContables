@@ -27,33 +27,57 @@ public class Municipios {
         this.Usuario = Usuario;
     }
 
+    /**
+     * Constructor de la clase Municipios
+     */
     public Municipios() {
     }
 
+    /**
+     * @return Identificador único de la clase
+     */
     public int getId() {
         return Id;
     }
 
+    /**
+     * @return Nombre del Municipio
+     */
     public String getNombre() {
         return Nombre;
     }
 
+    /**
+     * @param Nombre {@link Municipios#getNombre() }
+     */
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    /**
+     * @return Instancia de {@link Models.Tipos.TipoMunicipio}
+     */
     public TipoMunicipio getTipoMunicipio() {
         return TipoMunicipio;
     }
 
+    /**
+     * @param TipoMunicipio {@link Municipios#getTipoMunicipio() }
+     */
     public void setTipoMunicipio(TipoMunicipio TipoMunicipio) {
         this.TipoMunicipio = TipoMunicipio;
     }
 
+    /**
+     * @return Instancia de {@link Models.Usuarios}
+     */
     public Usuarios getUsuario() {
         return Usuario;
     }
 
+    /**
+     * @param Usuario {@link Municipios#getUsuario() }
+     */
     public void setUsuario(Usuarios Usuario) {
         this.Usuario = Usuario;
     }
