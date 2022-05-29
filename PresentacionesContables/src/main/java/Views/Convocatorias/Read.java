@@ -5,6 +5,7 @@
 package Views.Convocatorias;
 
 import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /**
@@ -36,9 +37,11 @@ public class Read extends javax.swing.JFrame {
         return jTextField3;
     }
 
-    public JTextField getjTextField4() {
-        return jTextField4;
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
     }
+
+
     
     
 

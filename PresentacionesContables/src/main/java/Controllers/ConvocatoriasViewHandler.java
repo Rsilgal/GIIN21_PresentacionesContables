@@ -151,7 +151,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
         read.getjTextField1().setText(elemento.getNombre());
         read.getjTextField2().setText("Tiempo 1");
         read.getjTextField3().setText("Tiempo 2");
-        read.getjTextField4().setText("Texto");
+        read.getjRadioButton1().setSelected(elemento.isEstadoApertura());
     }
     
     private void actualizarElemento() {
