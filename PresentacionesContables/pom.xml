@@ -4,6 +4,14 @@
     <groupId>com.mycompany.presentacionescontables</groupId>
     <artifactId>PresentacionesContables</artifactId>
     <version>1.0-SNAPSHOT</version>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <exec.mainClass>com.mycompany.presentacionescontables.PresentacionesContables</exec.mainClass>
+    </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.hibernate</groupId>
