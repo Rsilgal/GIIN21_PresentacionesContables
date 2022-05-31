@@ -12,6 +12,10 @@
         <exec.mainClass>com.mycompany.presentacionescontables.PresentacionesContables</exec.mainClass>
     </properties>
     
+    <properties>
+        <maven.compiler.release>7</maven.compiler.release>
+    </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.hibernate</groupId>
