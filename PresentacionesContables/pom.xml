@@ -35,4 +35,16 @@
         <sonar.organization>rsilgal</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
+    <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <locales>en,fr</locales>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
