@@ -26,7 +26,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Create de las Presentaciones.
      */
-    public Create getCreate() {
+    public Views.Presentaciones.Create getCreate() {
         return create;
     }
 
@@ -35,7 +35,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * los eventos de esta.
      * @param create Instancia de la ventana Create de las Presentaciones.
      */
-    public void setCreate(Create create) {
+    public void setCreate(Views.Presentaciones.Create create) {
         this.create = create;
         this.create.btnConfirmar.addActionListener(this);
     }
@@ -44,7 +44,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Delete de las Presentaciones.
      */
-    public Delete getDelete() {
+    public Views.Presentaciones.Delete getDelete() {
         return delete;
     }
 
@@ -53,7 +53,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * los eventos de esta.
      * @param delete Instancia de la ventena Delete de las Presentaciones.
      */
-    public void setDelete(Delete delete) {
+    public void setDelete(Views.Presentaciones.Delete delete) {
         this.delete = delete;
         this.delete.btnBorrar.addActionListener(this);
     }
@@ -62,7 +62,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Read de las Presentaciones.
      */
-    public Read getRead() {
+    public Views.Presentaciones.Read getRead() {
         return read;
     }
 
@@ -71,7 +71,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * los eventos de esta.
      * @param read Instancia de la ventana Read de las Presentaciones.
      */
-    public void setRead(Read read) {
+    public void setRead(Views.Presentaciones.Read read) {
         this.read = read;
         this.read.btnVolver.addActionListener(this);
     }
@@ -80,7 +80,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Update de las Presentaciones.
      */
-    public Update getUpdate() {
+    public Views.Presentaciones.Update getUpdate() {
         return update;
     }
 
@@ -89,7 +89,7 @@ public class PresentacionesViewHandler implements ActionListener {
      * los eventos de esta.
      * @param update Instancia de la ventana Update de las Presentaciones.
      */
-    public void setUpdate(Update update) {
+    public void setUpdate(Views.Presentaciones.Update update) {
         this.update = update;
         this.update.btnConfirmar.addActionListener(this);
     }
@@ -139,7 +139,7 @@ public class PresentacionesViewHandler implements ActionListener {
         PresentacionesDAO dao = new PresentacionesDAO();
         
         Presentaciones elemento = (Presentaciones) delete.getjComboBox2().getSelectedItem();
-        dao.deleteElement(elemento.getId());
+        dao.deleteElement(elemento);
     }
     
     private void leerElemento() {        

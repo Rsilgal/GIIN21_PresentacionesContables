@@ -16,76 +16,30 @@ import org.hibernate.Session;
  *
  * @author rsilvente
  */
-public class UsuariosDAO implements ICRUD<Usuarios> {
+public class UsuariosDAO extends CRUDBasico<Usuarios> {
 
     /**
      * Método con el cual generamos un nuevo Usuario en la Base de Datos.
      * @param element 
      */
-    @Override
     public void addElemet(Usuarios element) {
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            session.save(element);
-            session.getTransaction().commit();
-        }catch(RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
+        create(element);
     }
 
     /**
      * Método con el cual Actualizamos un Usuario en la Base de Datos.
      * @param element Instancia de la clase Usuario.
      */
-    @Override
     public void updateElement(Usuarios element) {
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            session.update(element);
-            session.getTransaction().commit();
-        }catch(RuntimeException e){
-            if (trns != null) {
-                trns.rollback();
-            }
-            e.printStackTrace();            
-        }finally{
-            session.flush();
-            session.close();
-        }
+        update(element);
     }
 
     /**
      * Mëtodo mediante el cual Eliminaremos un Usuario de la Base de Datos.
-     * @param id Identidicador del Usuario seleccionado.
+     * @param element Instancia de la clase Usuario.
      */
-    @Override
-    public void deleteElement(int id) {
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            Usuarios usuario = (Usuarios) session.load(Usuarios.class, id);
-            session.delete(usuario);
-            session.getTransaction().commit();
-        }catch(RuntimeException e){
-            if (trns != null){
-                trns.rollback();
-            }
-            e.printStackTrace();
-        }finally{
-            session.flush();
-            session.close();
-        }
+    public void deleteElement(Usuarios element) {
+        delete(element);
     }
     
     /**
@@ -93,21 +47,8 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
      * en la Base de Datos.
      * @return Listado de los Usuarios presentes en la Base de Datos.
      */
-    @Override
     public List<Usuarios> getAllElements() {
-        List<Usuarios> usuarios = new ArrayList<Usuarios>();
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            usuarios = session.createQuery("from Usuarios").list();
-        }catch(RuntimeException e){
-            e.printStackTrace();
-        }finally{
-            session.flush();
-            session.close();
-        }
-        return usuarios;
+        return readAllElements();
     }
 
     /**
@@ -116,24 +57,8 @@ public class UsuariosDAO implements ICRUD<Usuarios> {
      * @return Devuelve el Usuario cuyo ID coincide con el ID indicado
      * como parámetro de entrada.
      */
-    @Override
     public Usuarios getElementById(int id) {
-        Usuarios usuario = null;
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            String queryString = "from Usuarios where id = :Id";
-            Query query = session.createQuery(queryString);
-            query.setInteger("Id", id);
-            usuario = (Usuarios) query.uniqueResult();
-        }catch(RuntimeException e){
-            e.printStackTrace();
-        }finally{
-            session.flush();
-            session.close();
-        }
-        return usuario;
+        return readElementById(id, "Usuarios");
     }
 
     /**

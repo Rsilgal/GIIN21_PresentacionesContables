@@ -13,9 +13,9 @@ import java.util.List;
  */
 public interface ICRUD<T> {
     
-    public void addElemet(T element);
-    public void updateElement(T element);
-    public void deleteElement(int id);
-    public List<T> getAllElements();
-    public T getElementById(int id);
+    void addElemet(T element);
+    void updateElement(T element);
+    void deleteElement(int id);
+    List<T> getAllElements();
+    T getElementById(int id);
 }

@@ -26,7 +26,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Create de las Convocatorias.
      */
-    public Create getCreate() {
+    public Views.Convocatorias.Create getCreate() {
         return create;
     }
 
@@ -35,7 +35,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * los eventos de esta.
      * @param create Instancia de la ventana Create de las Convocatorias.
      */
-    public void setCreate(Create create) {
+    public void setCreate(Views.Convocatorias.Create create) {
         this.create = create;
         this.create.btnConfirmar.addActionListener(this);
     }
@@ -44,7 +44,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Delete de las Convocatorias.
      */
-    public Delete getDelete() {
+    public Views.Convocatorias.Delete getDelete() {
         return delete;
     }
 
@@ -53,7 +53,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * los eventos de esta.
      * @param delete Instancia de la ventena Delete de las Convocatorias.
      */
-    public void setDelete(Delete delete) {
+    public void setDelete(Views.Convocatorias.Delete delete) {
         this.delete = delete;
         this.delete.btnBorrar.addActionListener(this);
     }
@@ -62,7 +62,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Read de las Convocatorias.
      */
-    public Read getRead() {
+    public Views.Convocatorias.Read getRead() {
         return read;
     }
 
@@ -71,7 +71,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * los eventos de esta.
      * @param read Instancia de la ventana Read de las Convocatorias.
      */
-    public void setRead(Read read) {
+    public void setRead(Views.Convocatorias.Read read) {
         this.read = read;
         this.read.btnVolver.addActionListener(this);
     }
@@ -80,7 +80,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Update de las Convocatorias.
      */
-    public Update getUpdate() {
+    public Views.Convocatorias.Update getUpdate() {
         return update;
     }
 
@@ -89,7 +89,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
      * los eventos de esta.
      * @param update Instancia de la ventana Update de las Convocatorias.
      */
-    public void setUpdate(Update update) {
+    public void setUpdate(Views.Convocatorias.Update update) {
         this.update = update;
         this.update.btnConfirmar.addActionListener(this);
     }
@@ -142,7 +142,7 @@ public class ConvocatoriasViewHandler implements ActionListener {
         ConvocatoriasDAO dao = new ConvocatoriasDAO();
         
         Convocatorias elemento = (Convocatorias) delete.getListConvocatorias().getSelectedItem();
-        dao.deleteElement(elemento.getId());
+        dao.deleteElement(elemento);
     }
     
     private void leerElemento() {        

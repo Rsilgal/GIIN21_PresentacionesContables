@@ -25,7 +25,7 @@ public class UsuariosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Create de las Usuarios.
      */
-    public Create getCreate() {
+    public Views.Usuarios.Create getCreate() {
         return create;
     }
 
@@ -34,7 +34,7 @@ public class UsuariosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param create Instancia de la ventana Create de las Usuarios.
      */
-    public void setCreate(Create create) {
+    public void setCreate(Views.Usuarios.Create create) {
         this.create = create;
         this.create.btnConfirmar.addActionListener(this);
     }
@@ -43,7 +43,7 @@ public class UsuariosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Delete de las Usuarios.
      */
-    public Delete getDelete() {
+    public Views.Usuarios.Delete getDelete() {
         return delete;
     }
 
@@ -52,7 +52,7 @@ public class UsuariosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param delete Instancia de la ventena Delete de las Usuarios.
      */
-    public void setDelete(Delete delete) {
+    public void setDelete(Views.Usuarios.Delete delete) {
         this.delete = delete;
         this.delete.btnBorrar.addActionListener(this);
     }
@@ -61,7 +61,7 @@ public class UsuariosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Read de las Usuarios.
      */
-    public Read getRead() {
+    public Views.Usuarios.Read getRead() {
         return read;
     }
 
@@ -70,7 +70,7 @@ public class UsuariosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param read Instancia de la ventana Read de las Usuarios.
      */
-    public void setRead(Read read) {
+    public void setRead(Views.Usuarios.Read read) {
         this.read = read;
         this.read.btnVolver.addActionListener(this);
     }
@@ -79,7 +79,7 @@ public class UsuariosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Update de las Usuarios.
      */
-    public Update getUpdate() {
+    public Views.Usuarios.Update getUpdate() {
         return update;
     }
 
@@ -88,7 +88,7 @@ public class UsuariosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param update Instancia de la ventana Update de las Usuarios.
      */
-    public void setUpdate(Update update) {
+    public void setUpdate(Views.Usuarios.Update update) {
         this.update = update;
         this.update.btnConfirmar.addActionListener(this);
     }
@@ -124,21 +124,15 @@ public class UsuariosViewHandler implements ActionListener {
     }
     
     private void agregarElemento() {
-        UsuariosDAO dao = new UsuariosDAO();
-        
-        dao.addElemet(
-        new Usuarios(
-                create.getjTextField1().getText(),
+        UsuarioController.getUsuarioController().crearUsuario(create.getjTextField1().getText(),
                 String.valueOf(create.getjPasswordField1().getPassword()),
-                (Models.Tipos.TipoUsuario) create.getjComboBox1().getSelectedItem()
-        ));
+                (Models.Tipos.TipoUsuario) create.getjComboBox1().getSelectedItem());
     }
 
     private void eliminarElemento() {
-        UsuariosDAO dao = new UsuariosDAO();
+        Usuarios usuario = (Usuarios) delete.getjComboBox2().getSelectedItem();
         
-        Usuarios elemento = (Usuarios) delete.getjComboBox2().getSelectedItem();
-        dao.deleteElement(elemento.getId());
+        UsuarioController.getUsuarioController().eliminarUsuario(usuario);
     }
     
     private void leerElemento() {        
@@ -148,16 +142,14 @@ public class UsuariosViewHandler implements ActionListener {
         read.getjComboBox1().setSelectedItem(elemento);
     }
     
-    private void actualizarElemento() {
-        UsuariosDAO dao = new UsuariosDAO();
-        
+    private void actualizarElemento() {        
         Usuarios elemento = (Usuarios) read.getjComboBox2().getSelectedItem();
         
         elemento.setNombre(update.getjTextField1().getText());
         elemento.setClave(String.valueOf(update.getjPasswordField1().getPassword()));
         elemento.setTipoUsuario((Models.Tipos.TipoUsuario) update.getjComboBox1().getSelectedItem());
         
-        dao.updateElement(elemento);
+        UsuarioController.getUsuarioController().actualizarUsuario(elemento);
     }
     
 }

@@ -14,7 +14,6 @@ import Views.Municipios.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Timestamp;
 
 public class MunicipiosViewHandler implements ActionListener {
     Create create;
@@ -26,7 +25,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Create de las Municipios.
      */
-    public Create getCreate() {
+    public Views.Municipios.Create getCreate() {
         return create;
     }
 
@@ -35,7 +34,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param create Instancia de la ventana Create de las Municipios.
      */
-    public void setCreate(Create create) {
+    public void setCreate(Views.Municipios.Create create) {
         this.create = create;
         this.create.btnConfirmar.addActionListener(this);
     }
@@ -44,7 +43,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Delete de las Municipios.
      */
-    public Delete getDelete() {
+    public Views.Municipios.Delete getDelete() {
         return delete;
     }
 
@@ -53,7 +52,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param delete Instancia de la ventena Delete de las Municipios.
      */
-    public void setDelete(Delete delete) {
+    public void setDelete(Views.Municipios.Delete delete) {
         this.delete = delete;
         this.delete.btnBorrar.addActionListener(this);
     }
@@ -62,7 +61,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Read de las Municipios.
      */
-    public Read getRead() {
+    public Views.Municipios.Read getRead() {
         return read;
     }
 
@@ -71,7 +70,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param read Instancia de la ventana Read de las Municipios.
      */
-    public void setRead(Read read) {
+    public void setRead(Views.Municipios.Read read) {
         this.read = read;
         this.read.btnVolver.addActionListener(this);
     }
@@ -80,7 +79,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * 
      * @return Devuelve la instancia de la ventana Update de las Municipios.
      */
-    public Update getUpdate() {
+    public Views.Municipios.Update getUpdate() {
         return update;
     }
 
@@ -89,7 +88,7 @@ public class MunicipiosViewHandler implements ActionListener {
      * los eventos de esta.
      * @param update Instancia de la ventana Update de las Municipios.
      */
-    public void setUpdate(Update update) {
+    public void setUpdate(Views.Municipios.Update update) {
         this.update = update;
         this.update.btnConfirmar.addActionListener(this);
     }
@@ -140,7 +139,7 @@ public class MunicipiosViewHandler implements ActionListener {
         MunicipiosDAO dao = new MunicipiosDAO();
         
         Municipios elemento = (Municipios) delete.getjComboBox3().getSelectedItem();
-        dao.deleteElement(elemento.getId());
+        dao.deleteElement(elemento);
     }
     
     private void leerElemento() {        

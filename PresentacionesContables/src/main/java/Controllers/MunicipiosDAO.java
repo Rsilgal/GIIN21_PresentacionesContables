@@ -17,79 +17,30 @@ import org.hibernate.Transaction;
  * Municipios
  * @author rsilvente
  */
-public class MunicipiosDAO implements ICRUD<Municipios> {
+public class MunicipiosDAO extends CRUDBasico<Municipios> {
 
     /**
      * Método con el cual generamos un nuevo Municipio en la Base de Datos
      * @param element Instancia de la clase Municipio.
      */
-    @Override
     public void addElemet(Municipios element) {
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        try{
-            trns = session.beginTransaction();
-            session.save(element);
-            session.getTransaction().commit();
-        }catch(RuntimeException e){
-            if (trns != null) {
-                trns.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
-        
+        create(element);
     }
 
     /**
      * Método con el cual Actualizamos un Municipio en la Base de Datos.
      * @param element Instancia de la clase Municipio.
      */
-    @Override
     public void updateElement(Municipios element) {
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        
-        try{
-            trns = session.getTransaction();
-            session.update(element);
-            session.getTransaction().commit();
-        } catch(RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
+        update(element);
     }
 
     /**
      * Método mediante el cual Eliminaremos un Municipio de la Base de Datos.
-     * @param id Identificador del Municipio seleccionado.
+     * @param element Instancia de la clase Municipio.
      */
-    @Override
-    public void deleteElement(int id) {
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        
-        try{
-            trns = session.getTransaction();
-            Municipios municipio = (Municipios) session.load(Municipios.class, id);
-            session.delete(municipio);
-            session.getTransaction().commit();
-        } catch(RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
+    public void deleteElement(Municipios element) {
+        delete(element);
     }
 
     /**
@@ -97,22 +48,8 @@ public class MunicipiosDAO implements ICRUD<Municipios> {
      * en la Base de Datos.
      * @return Listado de los Municipios presentes en la Base de Datos.
      */
-    @Override
     public List<Municipios> getAllElements() {
-        List<Municipios> municipios = new ArrayList<Municipios>();
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        
-        try {
-            trns = session.getTransaction();
-            municipios = session.createQuery("from Municipios").list();
-        } catch(RuntimeException e) {
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
-        return municipios;
+        return readAllElements();
     }
 
     /**
@@ -121,25 +58,8 @@ public class MunicipiosDAO implements ICRUD<Municipios> {
      * @return Devuelve el Municipio cuyo ID coincide con el ID indicado 
      * como parámetro de entrada.
      */
-    @Override
     public Municipios getElementById(int id) {
-        Municipios municipio = null;
-        Transaction trns = null;
-        Session session = ConnectionController.getSessionFactory().openSession();
-        
-        try {
-            trns = session.getTransaction();
-            String queryString = "from Municipios where id = :Id";
-            Query query = session.createQuery(queryString);
-            query.setInteger("Id", id);
-            municipio = (Municipios) query.uniqueResult();
-        }catch(RuntimeException e) {
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
-        return municipio;
+        return readElementById(id, "Municipios");
     }
     
 }
